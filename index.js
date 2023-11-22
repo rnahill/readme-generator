@@ -1,5 +1,7 @@
 // TODO: Include packages needed for this application
 
+const generateMarkdown = require("./utils/generateMarkdown");
+
 // TODO: Create an array of questions for user input
 const questions = [];
 
@@ -7,7 +9,15 @@ const questions = [];
 function writeToFile(fileName, data) {}
 
 // TODO: Create a function to initialize app
-function init() {}
+function init() {
+// ask questions here
+
+    let responses = {
+        title: "Example"
+    }
+
+    generateMarkdown(responses);
+}
 
 // Function call to initialize app
 init();
