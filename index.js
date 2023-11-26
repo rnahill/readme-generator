@@ -7,60 +7,74 @@ const inquirer = require('inquirer');
 const questions = [ 
 {
     type: "input",
-    question:  "What is the title of your project?",
+    message:  "What is the title of your project?",
     name: "title"
+    
+    // require input
 },
 
 {
     type: "input",
-    question:  "Include a description of your project:",
+    message:  "Include a description of your project:",
     name: "description"
+    // require input
 },
 
 {
     type: "input",
-    question:  "If applicable, provide installation intructions for your application:",
+    message:  "If applicable, provide installation intructions for your application:",
     name: "installation"
 },
 
 {
     type: "input",
-    question:  "Include usage instructions for your application:",
+    message:  "Include usage instructions for your application:",
     name: "usage"
+    // require input
 },
 
 {
     type: "list",
-    question:   "Which License did you use?",
+    message:   "Which License did you use?",
     choices: ['GNU AGPLv3', 'GNU GPLv3', 'GNU LGPLv3', 'Mozilla Public License 2.0', 'Apache License 2.0', 'MIT License', 'Boost Software License 1.0', 'The Unlicense', 'Other License'],
     name: "license"
+    // require input
 },
 
 {
     type: "input",
-    question:   "Include anyone who contributed to the project, if any.",
+    message:   "Include anyone who contributed to the project, if any.",
     name: "contributors"
 },
 
 {
     type: "input",
-    question:   "If applicable, give instructions on how to test your application:",
+    message:   "If applicable, give instructions on how to test your application:",
     name: "tests"
 },
 
 {
     type: "input",
-    question:    "What is your Github username? (No @ needed)",
+    message:    "What is your Github username? (No @ needed)",
     name: "username"
+    // require input
 },
 
 {
     type: "input",
-    question:    "What email address can a user use to contact you?",
+    message:    "What email address can a user use to contact you?",
     name: "contact"
+    // require input
 },
 
 ];
+
+function invalidResponse (answer){
+    let answer = questions.name;
+    if(answer.length < 1){
+        return console.log('This field is required.');
+    }
+}
 
 
 // need table of contents
