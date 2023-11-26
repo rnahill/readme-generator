@@ -69,12 +69,12 @@ const questions = [
 
 ];
 
-function invalidResponse (answer){
-    let answer = questions.name;
-    if(answer.length < 1){
-        return console.log('This field is required.');
-    }
-}
+// function invalidResponse (answer){
+//     answer = questions.input; 
+//     if(answer.length < 1){
+//         return console.log('This field is required.');
+//     }
+// }
 
 
 // need table of contents
@@ -85,12 +85,14 @@ function invalidResponse (answer){
 function writeToFile(fileName, data) {}
 
 // TODO: Create a function to initialize app
-function init() {
-// ask questions here
+async function init() {
 
-    let responses = {
-        title: "Example"
-    }
+const responses = await inquirer.prompt(questions);
+console.log(responses);
+
+    // let responses = {
+    //     title: "Example"
+    // }
 
     generateMarkdown(responses);
 }
