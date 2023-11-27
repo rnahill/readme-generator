@@ -70,32 +70,48 @@ const questions = [
 ];
 
 // function invalidResponse (answer){
-//     answer = questions.input; 
+//     answer = questions.name; 
 //     if(answer.length < 1){
 //         return console.log('This field is required.');
 //     }
 // }
 
-
-// need table of contents
-
-
+// invalidResponse();
 
 // TODO: Create a function to write README file
-function writeToFile(fileName, data) {}
+function writeToFile(fileName, data) {
+    const fs = require('fs');
+
+    fs.writeFile(fileName, data, (err) => {
+        if (err) {
+            console.error('Error writing to file:', err);
+        } else {
+            console.log('File write successful.');
+        }
+    });
+}
 
 // TODO: Create a function to initialize app
+
+
 async function init() {
 
-const responses = await inquirer.prompt(questions);
-console.log(responses);
+    const responses = await inquirer.prompt(questions);
 
+    console.log(responses);
     // let responses = {
     //     title: "Example"
     // }
 
     generateMarkdown(responses);
+    
+    let fileName = "README.md";
+    const jsonString = JSON.stringify(responses);
+
+    writeToFile(fileName, jsonString);
 }
 
 // Function call to initialize app
 init();
+
+
