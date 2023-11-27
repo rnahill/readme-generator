@@ -35,12 +35,120 @@ function generateMarkdown(data) {
     tableOfContents += ` [Tests](#tests)`
   };
 
+// Add title and description
+
+  let markdown = 
+  `
+  # ${data.title}
+
+  ## Description
+
+  ${data.description}
+  
+  `
+
+  // Add table of contents
+  markdown += tableOfContents;
+
+  // Add installation section
+
+  if(data.installation !== ''){
+
+    markdown +=
+    `
+
+    ## Installation
+
+    ${data.installation}
+
+    `
+  };
+
+  // Add usage section
+
+  if(data.usage !== ''){
+
+    markdown +=
+    `
+
+    ## Usage
+
+    ${data.usage}
+
+    `
+  };
+
+  // Add License section
+
+  markdown += 
+  `
+
+  ## License
+
+  ${data.license}
+
+  `
+
+  // Add contributors section
+
+  if(data.contributors !== ''){
+    
+    markdown +=
+    `
+
+    ## Contributors
+
+    ${data.contributors}
+    
+    `
+  }
+
+  // Add tests section
+
+  if(data.tests !== ''){
+
+    markdown +=
+    `
+
+    ## Tests
+
+    ${data.tests}
+
+    `
+  }
+
+  // add questions section
+
+  markdown +=
+  `
+  
+  ## Questions
+
+  ${data.userName}
+
+  ${data.contact}
+  
+  `
   
   
   
   
-  return `# ${data.title}
-`
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  console.log(markdown)
+
+  
+  
+  
+//   return `# ${data.title}
+// `
 ;
 }
 
