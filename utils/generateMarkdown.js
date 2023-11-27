@@ -121,7 +121,7 @@ function generateMarkdown(data) {
 
   markdown +=
   `
-  
+
   ## Questions
 
   ${data.userName}
@@ -129,18 +129,6 @@ function generateMarkdown(data) {
   ${data.contact}
   
   `
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
   
   console.log(markdown)
 

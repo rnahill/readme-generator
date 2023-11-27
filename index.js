@@ -105,7 +105,7 @@ async function init() {
 
     generateMarkdown(responses);
     
-    let fileName = "README.md";
+    const fileName = "exampleREADME.md";
     const jsonString = JSON.stringify(responses);
 
     writeToFile(fileName, jsonString);
