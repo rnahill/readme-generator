@@ -115,3 +115,14 @@ async function init() {
 init();
 
 
+// to do:
+
+// add github api to access github users
+
+// figure out how to get markdown over to index.js
+
+// figure out invalidResponse function
+
+// figure out layout of readme
+
+// finish other functions
