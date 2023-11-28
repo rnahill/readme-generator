@@ -115,12 +115,3 @@ async function init() {
 // Function call to initialize app
 
 init();
-
-
-// to do:
-
-// write readme
-
-// make video
-
-// finish other functions
