@@ -36,6 +36,8 @@
 
    Run `node index` in the command line to start the application and answer the prompts. The README will be automatically generated as long as all of the prompts have been answered. Change anything you like or fix any layout issues in the README file if needed.
 
+   Link to video showing how to use application: https://drive.google.com/file/d/1u_Mp9RewzoYUzsRRdBoULBKz9xc_1PWO/view
+
     
 
 ## License

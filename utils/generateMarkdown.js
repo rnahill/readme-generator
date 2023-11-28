@@ -81,7 +81,7 @@ function generateMarkdown(data) {
 
 ## Description
 
-  ${data.description}
+${data.description}
   
   `
 
@@ -97,7 +97,7 @@ function generateMarkdown(data) {
 
 ## Installation
 
-    ${data.installation}
+${data.installation}
 
     `
   };
@@ -111,7 +111,7 @@ function generateMarkdown(data) {
 
 ## Usage
 
-    ${data.usage}
+${data.usage}
 
     `
   };
@@ -123,9 +123,9 @@ function generateMarkdown(data) {
 
 ## License
 
-  ${data.license}
+${data.license}
 
-  ${renderLicenseBadge(data.license)}
+${renderLicenseBadge(data.license)}
 
   `
 
@@ -138,7 +138,7 @@ function generateMarkdown(data) {
 
 ## Contributors
 
-    ${data.contributors}
+${data.contributors}
     
     `
   }
@@ -151,7 +151,7 @@ function generateMarkdown(data) {
     `
 ## Tests
 
-    ${data.tests}
+${data.tests}
 
     `
   }
@@ -163,11 +163,11 @@ function generateMarkdown(data) {
 
 ## Questions
 
-  Questions? Contact me using the links below.
+Questions? Contact me using the links below.
 
-  Github: ${data.userName}
+Github: ${data.username}
 
-  Email: ${data.contact}
+Email: ${data.contact}
   
   `
   

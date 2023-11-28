@@ -106,7 +106,7 @@ async function init() {
 
     let markdown = generateMarkdown(responses);
     
-    const fileName = "README.md";
+    const fileName = "sampleREADME.md";
 
     writeToFile(fileName, markdown);
 
