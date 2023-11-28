@@ -16,19 +16,19 @@ function generateMarkdown(data) {
   };
 
   if(data.usage !== '') {
-    tableOfContents += ` [Usage](#usage)`;
+    tableOfContents += ` * [Usage](#usage)`;
   };
 
   if(data.license !== '') {
-    tableOfContents += ' [License](#license)';
+    tableOfContents += ' * [License](#license)';
   };
 
   if(data.contributors !== '') {
-    tableOfContents += ` [Contributors(#contributors)]`
+    tableOfContents += ` * [Contributors](#contributors)`
   };
 
   if(data.tests !== '') {
-    tableOfContents += ` [Tests](#tests)`
+    tableOfContents += ` * [Tests](#tests)`
   };
 
 // Add title and description
@@ -37,7 +37,7 @@ function generateMarkdown(data) {
   `
   # ${data.title}
 
-  ## Description
+## Description
 
   ${data.description}
   
@@ -53,7 +53,7 @@ function generateMarkdown(data) {
     markdown +=
     `
 
-    ## Installation
+  ## Installation
 
     ${data.installation}
 
@@ -67,7 +67,7 @@ function generateMarkdown(data) {
     markdown +=
     `
 
-    ## Usage
+  ## Usage
 
     ${data.usage}
 
@@ -79,7 +79,7 @@ function generateMarkdown(data) {
   markdown += 
   `
 
-  ## License
+## License
 
   ${data.license}
 
@@ -92,7 +92,7 @@ function generateMarkdown(data) {
     markdown +=
     `
 
-    ## Contributors
+## Contributors
 
     ${data.contributors}
     
@@ -117,13 +117,13 @@ function generateMarkdown(data) {
   markdown +=
   `
 
-  ## Questions
+## Questions
 
   Questions? Contact me using the links below.
 
-  ${data.userName}
+  Github: ${data.userName}
 
-  ${data.contact}
+  Email: ${data.contact}
   
   `
   
