@@ -29,12 +29,12 @@
 
 ## Installation
 
-    To create your own read me, `git clone` the repository onto your own local computer. Then run `npm i inquirer@8.2.4`  to install the required packages.
+    To create your own read me, 'git clone' the repository onto your own local computer. Then run 'npm i inquirer@8.2.4'  to install the required packages.
     
 
 ## Usage
 
-     Run `node index` in the command line to start the application and answer the prompts. The README will be automatically generated as long as all of the prompts have been answered.
+     Run 'node index' in the command line to start the application and answer the prompts. The README will be automatically generated as long as all of the prompts have been answered.
 
     
 
