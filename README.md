@@ -34,7 +34,7 @@
 
 ## Usage
 
-   Run `node index` in the command line to start the application and answer the prompts. The README will be automatically generated as long as all of the prompts have been answered.
+   Run `node index` in the command line to start the application and answer the prompts. The README will be automatically generated as long as all of the prompts have been answered. Change anything you like or fix any layout issues in the README file if needed.
 
     
 
