@@ -1,41 +1,83 @@
-// TODO: Create a function that returns a license badge based on which license is passed in
+// Function that returns license badge and link based on user's chosen license
 // If there is no license, return an empty string
-function renderLicenseBadge(license) {}
+function renderLicenseBadge(license) {
+  if(license === 'Mozilla Public License 2.0') {
+    return '![License: MPL 2.0](https://img.shields.io/badge/License-MPL_2.0-brightgreen.svg)(https://opensource.org/licenses/MPL-2.0)';
+  } 
 
-// TODO: Create a function that returns the license link
-// If there is no license, return an empty string
-function renderLicenseLink(license) {}
+  if(license === 'Apache License 2.0'){
+    return '![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)(https://opensource.org/licenses/Apache-2.0)';
+  }
 
-// TODO: Create a function to generate markdown for README
+  if(license === 'MIT License'){
+    return '![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)(https://opensource.org/licenses/MIT)'
+  }
+
+  if(license === 'Boost Software License 1.0'){
+    return '![License](https://img.shields.io/badge/License-Boost_1.0-lightblue.svg)(https://www.boost.org/LICENSE_1_0.txt)'
+  }
+
+  if(license === 'The Unlicense'){
+    return '![License: Unlicense](https://img.shields.io/badge/license-Unlicense-blue.svg)(http://unlicense.org/)'
+  }
+
+  if(license === 'None'){
+    return '';
+  }
+}
+
 function generateMarkdown(data) {
   
+
+// Create table of contents
+
   let tableOfContents = `## Table of Contents`;
 
   if(data.installation !== '') {
-    tableOfContents += ` * [Installation](#installation)`;
+    tableOfContents += ` 
+    
+* [Installation](#installation)
+    
+    `;
   };
 
   if(data.usage !== '') {
-    tableOfContents += ` * [Usage](#usage)`;
+    tableOfContents += ` 
+    
+* [Usage](#usage)
+    
+    `;
   };
 
   if(data.license !== '') {
-    tableOfContents += ' * [License](#license)';
+    tableOfContents += ` 
+    
+* [License](#license)
+    
+    `;
   };
 
   if(data.contributors !== '') {
-    tableOfContents += ` * [Contributors](#contributors)`
+    tableOfContents += ` 
+    
+* [Contributors](#contributors)
+    
+    `
   };
 
   if(data.tests !== '') {
-    tableOfContents += ` * [Tests](#tests)`
+    tableOfContents += ` 
+    
+* [Tests](#tests)
+    
+    `
   };
 
 // Add title and description
 
   let markdown = 
   `
-  # ${data.title}
+# ${data.title}
 
 ## Description
 
@@ -43,38 +85,38 @@ function generateMarkdown(data) {
   
   `
 
-  // Add table of contents
+// Add table of contents
   markdown += tableOfContents;
 
-  // Add installation section
+// Add installation section
 
   if(data.installation !== ''){
 
     markdown +=
     `
 
-  ## Installation
+## Installation
 
     ${data.installation}
 
     `
   };
 
-  // Add usage section
+// Add usage section
 
   if(data.usage !== ''){
 
     markdown +=
     `
 
-  ## Usage
+## Usage
 
     ${data.usage}
 
     `
   };
 
-  // Add License section
+// Add License section
 
   markdown += 
   `
@@ -83,9 +125,11 @@ function generateMarkdown(data) {
 
   ${data.license}
 
+  ${renderLicenseBadge(data.license)}
+
   `
 
-  // Add contributors section
+// Add contributors section
 
   if(data.contributors !== ''){
     
@@ -99,7 +143,7 @@ function generateMarkdown(data) {
     `
   }
 
-  // Add tests section
+// Add tests section
 
   if(data.tests !== ''){
 
@@ -112,7 +156,7 @@ function generateMarkdown(data) {
     `
   }
 
-  // add questions section
+// add Questions section
 
   markdown +=
   `
@@ -127,14 +171,8 @@ function generateMarkdown(data) {
   
   `
   
-  // console.log(markdown)
-  return markdown;
+return markdown;
   
-  
-  
-//   return `# ${data.title}
-// `
-;
 }
 
 module.exports = generateMarkdown;

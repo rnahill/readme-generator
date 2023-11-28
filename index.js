@@ -1,10 +1,10 @@
-// TODO: Include packages needed for this application
+// Packages needed for this application
 
 const generateMarkdown = require("./utils/generateMarkdown");
 const inquirer = require('inquirer');
 const fs = require('fs');
 
-// TODO: Create an array of questions for user input
+// Array of questions for user input
 const questions = [ 
 {
     type: "input",
@@ -33,7 +33,7 @@ const questions = [
 {
     type: "list",
     message:   "Which License did you use?",
-    choices: ['GNU AGPLv3', 'GNU GPLv3', 'GNU LGPLv3', 'Mozilla Public License 2.0', 'Apache License 2.0', 'MIT License', 'Boost Software License 1.0', 'The Unlicense', 'Other License'],
+    choices: ['Mozilla Public License 2.0', 'Apache License 2.0', 'MIT License', 'Boost Software License 1.0', 'The Unlicense','None'],
     name: "license"
 },
 
@@ -63,10 +63,12 @@ const questions = [
 
 ];
 
+
+// Function to tell user what fields are required. If any sections are blank then a file will not be created. User will have to restart program to successfully make a file.
+
 function invalidResponse (answer){
 
     for(const key in answer){
-        // console.log(answer[key]);
         let currentAnswer = answer[key]; 
     if(currentAnswer.length < 1){
         
@@ -77,9 +79,8 @@ function invalidResponse (answer){
     }
 }
 
+// Function to write readme file
 
-
-// TODO: Create a function to write README file
 function writeToFile(fileName, data) {
     
 
@@ -92,8 +93,8 @@ function writeToFile(fileName, data) {
     });
 }
 
-// TODO: Create a function to initialize app
 
+//Function to initialize application
 
 async function init() {
 
@@ -105,22 +106,21 @@ async function init() {
 
     let markdown = generateMarkdown(responses);
     
-    const fileName = "exampleREADME.md";
+    const fileName = "README.md";
 
     writeToFile(fileName, markdown);
 
 }
 
 // Function call to initialize app
+
 init();
 
 
 // to do:
 
-// figure out how to get markdown over to index.js
+// write readme
 
-// figure out invalidResponse function
-
-// figure out layout of readme
+// make video
 
 // finish other functions
